@@ -246,6 +246,10 @@ fi
 
 # detect which IO API to use:
 
+PKG_CHECK_MODULES(LIBEVENT, [libevent >= 2])
+LIBS="-levent $LIBS"
+
+
 x_io_backend=none
 
 AC_ARG_WITH(select,
